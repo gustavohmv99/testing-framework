@@ -21,6 +21,21 @@ class TestCase:
     def tear_down(self):
         pass
 
+    def assert_equal(self, first, second):
+        if first != second:
+            msg = f'{first} != {second}'
+            raise AssertionError(msg)
+
+    def assert_true(self, expr):
+        if not expr:
+            msg = f'{expr} is not true'
+            raise AssertionError(msg)
+
+    def assert_false(self, expr):
+        if expr:
+            msg = f'{expr} is not false'
+            raise AssertionError(msg)
+
 class TestResult:
 
     RUN_MSG = 'run'
